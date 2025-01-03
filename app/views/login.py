@@ -1,6 +1,5 @@
 #importanto tudo da biblioteca tkinter
 from tkinter import *
-from app.controllers.login import login
 
 #criando a class interface_login herdada da class Frame
 class interface_login(Frame):
@@ -17,10 +16,11 @@ class interface_login(Frame):
         #frames
         self.header = Frame()
         self.main = Frame()
+        self.button = Frame()
         self.footer = Frame()
-        self.main.pack
         self.header.pack()
         self.main.pack()
+        self.button.pack()
         self.footer.pack()
         
         #header
@@ -38,18 +38,17 @@ class interface_login(Frame):
         self.senha.grid(row=1, column=0)
         self.senha_input.grid(row=1, column=1)
         
-        self.botao = Button(self.main, text="Entrar", command=self.logar)
-        self.sair = Button(self.main, text="Sair", command=self.master.quit)
-        self.botao.pack()
-        self.sair.pack()
+        self.botao = Button(self.button, text="Entrar", command=self.logar)
+        self.sair = Button(self.button, text="Sair", command=self.master.quit)
+        self.botao.pack(side='left', padx=5)
+        self.sair.pack(side='right')
         
         #footer
-        
+        self.footer = Label(self.footer, text="@p._uchoa")
+        self.footer.pack(side='bottom')
         mainloop()
     def logar(self):
         email = self.email_input.get()
         senha = self.senha_input.get()
-        redirecionamento = login()
-        redirecionamento.autenticar(email, senha)
 
 interface_login()
