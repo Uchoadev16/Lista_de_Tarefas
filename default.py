@@ -1,4 +1,4 @@
-from app.views.main import main
+from app.index import index
 
 if __name__ == "__main__":
-    main()
+    index()
