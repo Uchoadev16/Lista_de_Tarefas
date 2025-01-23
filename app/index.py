@@ -1,17 +1,15 @@
 #tkinter
 from tkinter import *
-from tkinter import Image
-from tkinter import ttk
+import ttkbootstrap as ttk
+from ttkbootstrap.constants import *
 
 #SqLite
 import sqlite3
 
-
 #class
 class index():
     #atributos
-    root = Tk()
-    
+    root = ttk.Tk()
     #construtor
     def __init__(self):
         
@@ -20,10 +18,10 @@ class index():
         self.main()
         self.footer()
         self.root.mainloop()
-    
-
     #metodos
     def tela(self):
+        
+        self.root.Style("darkly")
         self.root.title("Lista de Tarefas")
         self.root.iconbitmap("app/assets/img/icone.ico")
         self.root.configure(background="#010409")
@@ -43,7 +41,7 @@ class index():
         self.frame_main = Frame(self.root, bg="#010409")
         self.frame_main.place(relx=0, rely=0.2, relheight=0.5, relwidth=1) 
         
-        self.logar = Button(self.frame_main, text="Logar", font=("Arial", 15, "bold"), bg="white")
+        self.logar = ttk.Button(self.frame_main, text="Logar", bootstyle=SUCCESS)
         self.logar.place(relx=0.43, rely=0.3)
         
         self.cadastrar = Button(self.frame_main, text="Cadastra-se", font=("Arial", 15, "bold"), bg="white")
@@ -58,5 +56,6 @@ class index():
         
         self.nome = Label(self.frame_footer, text="@p._uchoa", font=("Arial", 10, "bold"), fg="white", bg="#010409")
         self.nome.pack(anchor="center", pady=140)
+
 index()
     
