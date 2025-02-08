@@ -1,10 +1,14 @@
 #tkinter
+import tkinter as tk
 from tkinter import *
 import ttkbootstrap as ttk
 from ttkbootstrap.constants import *
 
 #SqLite
 import sqlite3
+
+#funções
+
 
 class login:
     #atributos
@@ -40,7 +44,18 @@ class login:
         self.frame_main = ttk.Frame(self.root)
         self.frame_main.place(relx=0, rely=0.2, relheight=0.5, relwidth=1)
         
-        self.input_email = ttk.Entry(self.frame_main)
+        self.label_email = ttk.Label(self.frame_main, text="E-mail:", font=("Arial", 15, "normal"))
+        self.label_email.place(relx=0.14, rely=0.24)
+        
+        self.input_email = ttk.Entry(self.frame_main, font=("Arial", 12, "normal"))
+        self.input_email.place(relx=0.25, rely=0.25, relheight=0.15, relwidth=0.5)
+        
+        self.label_senha = ttk.Label(self.frame_main, text="Senha:", font=("Arial", 15, "normal"))
+        self.label_senha.place(relx=0.14, rely=0.54)
+        
+        self.input_senha = ttk.Entry(self.frame_main, font=("Arial", 12, "normal"))
+        self.input_senha.place(relx=0.25, rely=0.55, relheight=0.15, relwidth=0.5)
+
         
     def footer(self):
         self.frame_footer = ttk.Frame(self.root)
