@@ -6,7 +6,7 @@ from ttkbootstrap.constants import *
 #SqLite
 import sqlite3
 
-class login:
+class cadastro:
     #atributos
     root = ttk.Window("Lista de tarefas", themename="superhero")
     
@@ -47,4 +47,4 @@ class login:
         self.nome = ttk.Label(self.frame_footer, text="@p._uchoa", font=("Arial", 10, "bold"))
         self.nome.place(relx=0.43,rely=0.2)
         
-login()
+cadastro()

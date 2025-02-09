@@ -8,7 +8,8 @@ from ttkbootstrap.constants import *
 import sqlite3
 
 #funções
-
+#base64
+import base64
 
 class login:
     #atributos
@@ -36,7 +37,16 @@ class login:
         self.frame_head = ttk.Frame(self.root)
         self.frame_head.place(relx=0, rely=0, relheight=0.2, relwidth=1)
 
-        self.titulo = ttk.Label(self.frame_head, text="Login", font=("Stencil", 32, "normal"))
+        """self.volta = PhotoImage(data=base64.b64decode(self.butao_voltar))
+        self.volta = self.volta.subsample(2,2)
+        self.butao_voltar = Button(self.frame_head, image=self.volta)
+        self.butao_voltar.place(relx=0.1, rely=0.1, relheight=0.2, relwidth=0.2)"""
+        self.volta = PhotoImage("../assets/img/butao_voltar.png")
+        self.volta = self.volta.subsample(2,2)
+        self.butao_voltar = Button(self.frame_head, image=self.volta)
+        self.butao_voltar.place(relx=0.1, rely=0.1, height=50, width=50)
+        
+        self.titulo = ttk.Label(self.frame_head, text="Login", font=("Stencil", 35, "normal"))
         self.titulo.place(relx=0.35, rely=0.5)
         
     def main(self):
@@ -44,19 +54,21 @@ class login:
         self.frame_main = ttk.Frame(self.root)
         self.frame_main.place(relx=0, rely=0.2, relheight=0.5, relwidth=1)
         
-        self.label_email = ttk.Label(self.frame_main, text="E-mail:", font=("Arial", 15, "normal"))
-        self.label_email.place(relx=0.14, rely=0.24)
+        self.label_email = ttk.Label(self.frame_main, text="E-mail:", font=("Arial", 16, "normal"))
+        self.label_email.place(relx=0.1, rely=0.24)
         
-        self.input_email = ttk.Entry(self.frame_main, font=("Arial", 12, "normal"))
-        self.input_email.place(relx=0.25, rely=0.25, relheight=0.15, relwidth=0.5)
+        self.input_email = ttk.Entry(self.frame_main, font=("Arial", 13, "normal"))
+        self.input_email.place(relx=0.27, rely=0.22, relheight=0.17, relwidth=0.55)
         
-        self.label_senha = ttk.Label(self.frame_main, text="Senha:", font=("Arial", 15, "normal"))
-        self.label_senha.place(relx=0.14, rely=0.54)
+        self.label_senha = ttk.Label(self.frame_main, text="Senha:", font=("Arial", 16, "normal"))
+        self.label_senha.place(relx=0.10, rely=0.44)
         
-        self.input_senha = ttk.Entry(self.frame_main, font=("Arial", 12, "normal"))
-        self.input_senha.place(relx=0.25, rely=0.55, relheight=0.15, relwidth=0.5)
-
+        self.input_senha = ttk.Entry(self.frame_main, font=("Arial", 13, "normal"))
+        self.input_senha.place(relx=0.27, rely=0.42, relheight=0.17, relwidth=0.55)
         
+        self.button_logar = ttk.Button(self.frame_main, text="Logar",  bootstyle=SUCCESS)
+        self.button_logar.place(relx=0.27, rely=0.70, relheight=0.15, relwidth=0.55)
+       
     def footer(self):
         self.frame_footer = ttk.Frame(self.root)
         self.frame_footer.place(relx=0, rely=0.7, relheight=1, relwidth=1)
