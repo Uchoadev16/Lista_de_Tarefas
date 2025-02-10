@@ -36,15 +36,6 @@ class login:
         
         self.frame_head = ttk.Frame(self.root)
         self.frame_head.place(relx=0, rely=0, relheight=0.2, relwidth=1)
-
-        """self.volta = PhotoImage(data=base64.b64decode(self.butao_voltar))
-        self.volta = self.volta.subsample(2,2)
-        self.butao_voltar = Button(self.frame_head, image=self.volta)
-        self.butao_voltar.place(relx=0.1, rely=0.1, relheight=0.2, relwidth=0.2)"""
-        self.volta = PhotoImage("../assets/img/butao_voltar.png")
-        self.volta = self.volta.subsample(2,2)
-        self.butao_voltar = Button(self.frame_head, image=self.volta)
-        self.butao_voltar.place(relx=0.1, rely=0.1, height=50, width=50)
         
         self.titulo = ttk.Label(self.frame_head, text="Login", font=("Stencil", 35, "normal"))
         self.titulo.place(relx=0.35, rely=0.5)
