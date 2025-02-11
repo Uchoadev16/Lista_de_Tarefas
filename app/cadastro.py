@@ -8,24 +8,6 @@ import sqlite3
 
 class cadastro:
     #atributos
-    root = ttk.Window("Lista de tarefas", themename="superhero")
-    
-    #construtor
-    def __init__(self):
-        self.tela()
-        self.head()
-        self.main()
-        self.footer()
-        self.root.mainloop()
-        
-    #metodos
-    def tela(self):
-        
-        self.root.iconbitmap("app/assets/img/icone.ico")
-        self.root.geometry("550x700")
-        self.root.resizable(True, True)
-        self.root.maxsize(width=550, height=700)
-        self.root.minsize(width=550, height=700)
         
     def head(self):
         
@@ -47,4 +29,3 @@ class cadastro:
         self.nome = ttk.Label(self.frame_footer, text="@p._uchoa", font=("Arial", 10, "bold"))
         self.nome.place(relx=0.43,rely=0.2)
         
-cadastro()
